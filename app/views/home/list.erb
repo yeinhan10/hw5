@@ -1,0 +1,38 @@
+<div>
+  <img id ="push" src ="http://www.barringtonstoke.co.uk/wp-content/uploads/2016/04/The-Bucket-List-Logo.jpg">
+</div>
+  <% @every_post.each do |p| %>
+  <hr>
+  <h2>버킷리스트 내용</h2>
+  <h3><%= p.content %><br></h3>
+  <a href="/destroy/<%= p.id %>">[글 삭제]</a>
+  <a href="/update_view/<%= p.id %>">[글 수정]</a>
+
+<h2>댓글</h2>
+<form action="/reply_write" method="POST">
+    <input type="hidden" name="id_of_post" value="<%= p.id %>"></input>
+    <textarea name="content" class="form-control" rows="4" cols="70"></textarea><br>
+     <span class="glyphicon glyphicon-pencil" aria-hidden="true"><button type="submit">reply</button></span>
+</form>
+
+
+<% p.replies.each do |r| %>
+  <h3><p>-<%= r.content %></p></h3>
+   <a href="/reply_destroy/<%= r.id %>">[댓글 삭제]</a>
+   <a href = "/update_view_reply/<%= r.id%>">[댓글 수정]</a>
+
+<% end %>
+
+<br><br>
+<% end %>
+
+<h2><a href="https://hw5-yeinhan10.c9users.io/">Go to main page</a></h2>
+
+    <script>
+$( "#push" ).click(function() {
+  $( this ).css({
+    borderStyle: "inset" ,
+    cursor: "wait"
+  });
+});
+    </script>

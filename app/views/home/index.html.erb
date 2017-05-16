@@ -1,0 +1,17 @@
+<h1>Bucketlist Share</h1>
+
+<form action="/write" method="POST">
+    <textarea name="content" class="form-control" rows="4" cols="120"></textarea><br>
+    <button type="submit">share</button>
+</form>
+<p></p>
+
+
+<script>
+$.noConflict();
+jQuery(document).ready(function(){
+    jQuery("button").click(function(){
+        jQuery("p").text("Go to Next!");
+    });
+});
+</script>

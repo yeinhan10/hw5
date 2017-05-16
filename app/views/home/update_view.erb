@@ -1,0 +1,6 @@
+<h1>Bucketlist Update</h1>
+
+<form action="/update/<%= @one_post.id %>" method="POST">
+    <textarea name="content" class="form-control" rows="4" cols="120"><%= @one_post.content %></textarea><br>
+    <button type="submit">share</button>
+</form>

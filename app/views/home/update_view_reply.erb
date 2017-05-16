@@ -1,0 +1,6 @@
+
+<form action="/reply_update/<%=@one_reply.id%>" method="post">
+    <input type="hidden" name="id_of_post" value="<%= @one_reply.post.id %>"></input>
+    <textarea name="content" class="form-control" rows="4" cols="70"><%=@one_reply.content%></textarea><br>
+     <span class="glyphicon glyphicon-pencil" aria-hidden="true"><button type="submit">reply</button></span>
+</form>
