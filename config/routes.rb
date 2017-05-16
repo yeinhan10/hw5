@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'bread/index'
+
   root 'home#index'
   get 'home/index'
   post '/write' => 'home#write'
